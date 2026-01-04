@@ -1,0 +1,23 @@
+[project]
+name = "room-radio"
+version = "0.1.0"
+description = "Синхронизированное музыкальное веб-приложение"
+
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "websockets>=13.1",
+    "python-multipart>=0.0.12",
+    "python-jose[cryptography]>=3.3.0",
+]
+
+
+dev = [
+    "black>=24.0.0",
+    "isort>=5.13.0",
+    "ruff>=0.6.0",
+    "mypy>=1.11.0",
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+]
