@@ -21,6 +21,7 @@ BACKEND_PID=$!
 
 # Фронтенд на PORT
 cd src/frontend
+npm install --silent 
 npx vite --port "$PORT" &
 FRONTEND_PID=$!
 
