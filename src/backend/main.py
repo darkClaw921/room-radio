@@ -15,9 +15,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://e98722bfdbea.ngrok-free.app",
+        "https://radio.alteran-industries.ru",
     ],
-    allow_origin_regex=r"https://.*\.ngrok-free\.app|https://.*\.ngrok\.io",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -60,4 +59,6 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    import os
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run(app, host="0.0.0.0", port=port)

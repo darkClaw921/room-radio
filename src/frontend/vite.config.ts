@@ -10,24 +10,21 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
     host: true,
     allowedHosts: [
-      'e98722bfdbea.ngrok-free.app',
-      '.ngrok-free.app',
-      '.ngrok.io',
+      'radio.alteran-industries.ru',
     ],
     proxy: {
       '/api': {
-        target: 'http://localhost:7860',
+        target: 'http://localhost:8074',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:7860',
+        target: 'http://localhost:8074',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://localhost:7860',
+        target: 'ws://localhost:8074',
         ws: true,
         changeOrigin: true,
       },
